@@ -38,7 +38,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="twelve columns">
+        <div class="thirteen columns">
           <div class="site-header">
             <div class="header-top">
               <h1 class="site-title">
@@ -97,6 +97,16 @@
                     {{- post.tags|format_tags(humanize=True) -}}
                   </div>
                   {% endif %}
+                  
+                  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                  <!-- recumbents-728x90 -->
+                  <ins class="adsbygoogle"
+                      style="display:inline-block;width:728px;height:90px"
+                      data-ad-client="ca-pub-7635855390362508"
+                      data-ad-slot="8892283296"></ins>
+                  <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                 </script>
                 </div>
               </article>
             {% endfor %}
@@ -194,7 +204,7 @@
             <p>Theme inspired by <a href="http://www.fabthemes.com/binary/" target="_blank">Fabthemes</a> | Powered by <a href="http://postach.io/">Postach.io</a></p>
           </div>
         </div>
-        <div class="four columns">
+        <div class="three columns">
           <div class="sidebar">
             <div class="widget widget-about">
               <h2 class="widget-title"><a href="/">{{ site.author }}</a></h2>
@@ -254,13 +264,48 @@
                 {% endif %}
               </div>
             </div>
+            
+            {% if site.tags %}
+            <nav class="widget">
+              <h2 class="widget-title"> Timeline</h4>
+              <h3>2015</h3>
+              <ul>                
+                {% for tag in site.tags %}
+                    {% if tag.name == "2015-mar" %}                
+                    <li><a href="/tag/2015-mar" class="{{ set_active('/tag/2015-mar') }}">March</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% for tag in site.tags %}
+                    {% if tag.name == "2015-feb" %}                
+                    <li><a href="/tag/2015-feb" class="{{ set_active('/tag/2015-feb') }}">February</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% for tag in site.tags %}
+                    {% if tag.name == "2015-jan" %}                
+                    <li><a href="/tag/2015-jan" class="{{ set_active('/tag/2015-jan') }}">January</a></li>                    
+                    {% endif %}
+                {% endfor %}                                
+                </ul>
+              <h3>2014</h3>
+              <ul>
+                
+                {% for tag in site.tags %}
+                    {% if tag.name == "2014-dec" %}                
+                    <li><a href="/tag/2014-dec" class="{{ set_active('/tag/2014-dec') }}">December</a></li>
+                    {% endif %}
+                {% endfor %}
+                
+              </ul>
+            </nav>
+            {% endif %}
+            
             <div class="widget widget-tagcloud">
               <h2 class="widget-title">Tag Cloud</h2>
               <div class="widget-content tag-cloud">
                 {% if site.tags %}
                 <ul>
                   {% for tag in site.tags %}
-                  <li><a href="/tag/{{ tag.name }}">#{{ tag.name }}</a></li>
+                  <li><a href="/tag/{{ tag.name }}">{{ tag.name }}</a></li>
                   {% endfor %}
                 </ul>
                 {% endif %}
